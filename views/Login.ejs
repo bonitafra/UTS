@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #e0f7fa, #00796b); /* Gradasi warna laut */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+        }
+
+        .container {
+            background-color: #ffffff; /* Warna latar putih untuk kontainer */
+            max-width: 400px;
+            width: 100%;
+            padding: 30px; /* Padding lebih banyak untuk kesan elegan */
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        h2 {
+            text-align: center;
+            color: #00796b; /* Warna hijau laut */
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #00796b; 
+            font-weight: bold; /* Menebalkan label */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px; /* Padding lebih besar untuk kenyamanan */
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px; /* Sudut lebih melengkung */
+            transition: border-color 0.3s;
+            font-size: 16px; /* Ukuran font yang lebih besar */
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #00796b; /* Warna border saat fokus */
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #00796b; /* Warna tombol */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px; /* Ukuran font tombol */
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #004d40; /* Warna gelap saat hover */
+            transform: scale(1.05);
+        }
+
+        p {
+            text-align: center;
+            color: #00796b; 
+            margin-top: 20px;
+        }
+
+        a {
+            color: #00796b; /* Warna tautan */
+            text-decoration: none;
+            font-weight: bold; /* Menebalkan tautan */
+        }
+
+        a:hover {
+            text-decoration: underline; 
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            color: #00796b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login Akun</h2>
+        <form id="loginForm" action="/auth/login" method="POST" onsubmit="showLoading()">
+            <label for="username">Nama Admin</label>
+            <input type="text" id="username" name="username" placeholder="Masukkan nama admin" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Masukkan email admin" required>
+
+            <label for="password">Kata Sandi</label>
+            <input type="password" id="password" name="password" placeholder="Masukkan kata sandi" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p>Belum memiliki akun? <a href="/auth/register">Daftar disini!</a></p>
+        <p id="loading" class="loading">Sedang memproses...</p>
+    </div>
+
+    <script>
+        function showLoading() {
+            document.getElementById("loading").style.display = "block";
+        }
+    </script>
+</body>
+</html>

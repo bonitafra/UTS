@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(180, 214, 241); /* Latar belakang cerah */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px; /* Padding lebih banyak untuk tampilan elegan */
+            background-color: #a0d3e8; /* Warna latar belakang cerah dengan nuansa laut */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px; /* Sudut lebih melengkung */
+        }
+
+        h2 {
+            text-align: center;
+            color: #2b4d66; /* Warna gelap untuk kontras yang baik */
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #2b4d66; /* Warna label yang lebih gelap */
+            font-weight: bold; /* Menebalkan label */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px; /* Padding lebih besar untuk kenyamanan */
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px; /* Sudut lebih melengkung */
+            transition: border-color 0.3s;
+            font-size: 16px; /* Ukuran font yang lebih besar */
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #00796b; /* Warna border saat fokus */
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #00796b; /* Warna tombol */
+            color: white;
+            border: none;
+            border-radius: 5px; /* Sudut lebih melengkung */
+            cursor: pointer;
+            font-size: 16px; /* Ukuran font tombol */
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #004d40; /* Warna gelap saat hover */
+        }
+
+        p {
+            text-align: center;
+            color: #2b4d66; /* Warna teks yang lebih gelap untuk kontras */
+            margin-top: 20px;
+        }
+
+        a {
+            color: #00796b; /* Warna tautan yang sesuai dengan tema */
+            text-decoration: none;
+            font-weight: bold; /* Menebalkan tautan */
+        }
+
+        a:hover {
+            text-decoration: underline; 
+        }
+    </style>
+    <title>Register</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Register Akun</h2>
+        <form action="/auth/register" method="POST">
+            <label for="username">Nama Admin</label>
+            <input type="text" id="username" name="username" placeholder="Masukkan nama admin" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Masukkan email admin" required>
+
+            <label for="password">Kata Sandi</label>
+            <input type="password" id="password" name="password" placeholder="Masukkan kata sandi" required>
+
+            <button type="submit">Register</button>
+        </form>
+        <p>Sudah memiliki akun? <a href="/auth/login">Login disini!</a></p>
+    </div>
+</body>
+</html>
